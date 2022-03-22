@@ -61,6 +61,11 @@ func (db *MiniDB) Merge() error {
 			return err
 		}
 		// 内存中的索引状态是最新的，直接对比过滤出有效的 Entry
+		// 这里主要是看下内存里面保存的文件偏移量是不是当前最新的
+		// set A 1 offset=n
+		// set A 2 offset=2n
+		// set A 3 offset=3n
+		// ......
 		if off, ok := db.indexes[string(e.Key)]; ok && off == offset {
 			validEntries = append(validEntries, e)
 		}

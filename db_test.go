@@ -8,7 +8,7 @@ import (
 )
 
 func TestOpen(t *testing.T) {
-	db, err := Open("/tmp/minidb")
+	db, err := Open("./tmp/minidb")
 	if err != nil {
 		t.Error(err)
 	}
@@ -16,7 +16,7 @@ func TestOpen(t *testing.T) {
 }
 
 func TestMiniDB_Put(t *testing.T) {
-	db, err := Open("/tmp/minidb")
+	db, err := Open("./tmp/minidb")
 	if err != nil {
 		t.Error(err)
 	}
@@ -36,7 +36,7 @@ func TestMiniDB_Put(t *testing.T) {
 }
 
 func TestMiniDB_Get(t *testing.T) {
-	db, err := Open("/tmp/minidb")
+	db, err := Open("./tmp/minidb")
 	if err != nil {
 		t.Error(err)
 	}
@@ -59,7 +59,7 @@ func TestMiniDB_Get(t *testing.T) {
 }
 
 func TestMiniDB_Del(t *testing.T) {
-	db, err := Open("/tmp/minidb")
+	db, err := Open("./tmp/minidb")
 	if err != nil {
 		t.Error(err)
 	}
@@ -73,7 +73,7 @@ func TestMiniDB_Del(t *testing.T) {
 }
 
 func TestMiniDB_Merge(t *testing.T) {
-	db, err := Open("/tmp/minidb")
+	db, err := Open("./tmp/minidb")
 	if err != nil {
 		t.Error(err)
 	}
